@@ -4,7 +4,7 @@ import axios from 'axios';
 import testCsv from '../constants/PaymentAcc.csv';
 import Papa from 'papaparse';
 import emailjs from '@emailjs/browser';
-import loadingVd from "../assets/Loading2.mp4";
+import loadingVd from "../assets/loading2.mp4";
 import { useNavigate } from 'react-router-dom';
 export default function Payment() {
     const location = useLocation();
