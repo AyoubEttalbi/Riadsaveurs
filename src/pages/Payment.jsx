@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import testCsv from '../constants/PaymentAcc.csv';
 import Papa from 'papaparse';
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
 import loadingVd from "../assets/Loading2.mp4";
 import { useNavigate } from 'react-router-dom';
 export default function Payment() {
@@ -84,7 +84,7 @@ export default function Payment() {
 
                 setTimeout(() => {
                     const reserve_info = JSON.parse(localStorage.getItem('reserve_info'));
-                    const url = "http://localhost/riadapis/index.php?action=reserve";
+                    const url = "https://riadsaveurs.atwebpages.com/index.php?action=reserve";
                     let fdata = new FormData();
                     fdata.append('guests', reserve_info.guests);
                     fdata.append('date', reserve_info.date);
