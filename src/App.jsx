@@ -8,24 +8,24 @@ import Reservations from './pages/Reservations'
 import Payment from './pages/Payment'
 import Layout from './pages/Dashboard'
 export default function App() {
-  //removing ability to inspect 
+  // removing ability to inspect 
   document.addEventListener("contextmenu", (event) => event.preventDefault());
   document.addEventListener("keydown", (event) => {
     if (event.ctrlKey && ["u", "s", "i"].includes(event.key.toLowerCase()) || event.key === "F12") {
       event.preventDefault();
     }
   });
-  //devtools remove
-  let devToolsOpen = false;
-  const detectDevTools = () => {
-    const widthThreshold = window.outerWidth - window.innerWidth > 100;
-    const heightThreshold = window.outerHeight - window.innerHeight > 100;
-    devToolsOpen = widthThreshold || heightThreshold;
-    if (devToolsOpen) {
-      alert("Developer tools detected!");
-    }
-  };
-  window.addEventListener("resize", detectDevTools);
+  // //devtools remove
+  // let devToolsOpen = false;
+  // const detectDevTools = () => {
+  //   const widthThreshold = window.outerWidth - window.innerWidth > 100;
+  //   const heightThreshold = window.outerHeight - window.innerHeight > 100;
+  //   devToolsOpen = widthThreshold || heightThreshold;
+  //   if (devToolsOpen) {
+  //     alert("Developer tools detected!");
+  //   }
+  // };
+  // window.addEventListener("resize", detectDevTools);
   return (
     <main className="overflow-y-hidden ">
     <BrowserRouter>

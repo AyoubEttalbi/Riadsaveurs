@@ -73,7 +73,7 @@ function SignUp() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-[url('/src/assets/Riadsss.png')] bg-cover bg-center">
+    <div className="lg:h-screen flex items-center justify-center bg-[url('/src/assets/Riadsss.png')] bg-cover bg-center">
       <div className="flex flex-col justify-center text-center bg-white bg-opacity-90 p-8 rounded-lg shadow-2xl max-w-4xl w-full mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">Sign Up</h1>
         <form onSubmit={handleSubmit}>

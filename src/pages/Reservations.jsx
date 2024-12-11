@@ -111,7 +111,7 @@ function Reservations() {
                                                 return (
                                                     <div
                                                         key={table.table_id}
-                                                        className="bg-gray-100 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow flex justify-between items-center"
+                                                        className="flex-col lg:flex-row  bg-gray-100 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow flex justify-between items-center"
                                                     >
                                                         <div className="flex items-center space-x-4">
                                                             <img
