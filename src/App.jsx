@@ -25,7 +25,7 @@ export default function App() {
   //     alert("Developer tools detected!");
   //   }
   // };
-  window.addEventListener("resize", detectDevTools);
+  // window.addEventListener("resize", detectDevTools);
   return (
     <main className="overflow-y-hidden ">
     <BrowserRouter>
