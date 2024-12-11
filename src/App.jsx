@@ -16,15 +16,15 @@ export default function App() {
     }
   });
   //devtools remove
-  let devToolsOpen = false;
-  const detectDevTools = () => {
-    const widthThreshold = window.outerWidth - window.innerWidth > 100;
-    const heightThreshold = window.outerHeight - window.innerHeight > 100;
-    devToolsOpen = widthThreshold || heightThreshold;
-    if (devToolsOpen) {
-      alert("Developer tools detected!");
-    }
-  };
+  // let devToolsOpen = false;
+  // const detectDevTools = () => {
+  //   const widthThreshold = window.outerWidth - window.innerWidth > 100;
+  //   const heightThreshold = window.outerHeight - window.innerHeight > 100;
+  //   devToolsOpen = widthThreshold || heightThreshold;
+  //   if (devToolsOpen) {
+  //     alert("Developer tools detected!");
+  //   }
+  // };
   window.addEventListener("resize", detectDevTools);
   return (
     <main className="overflow-y-hidden ">
