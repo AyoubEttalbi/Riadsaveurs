@@ -96,12 +96,12 @@ export default function Payment() {
                                 seterrormsg("")
                                 const clientInfo = response.data.data;
 
-                                // sendOrderConfirmation(
-                                //     clientInfo.first_name,
-                                //     clientInfo.email,
-                                //     orderdMeals.map((meal) => `${meal.qt} x ${meal.name}`).join(", "),
-                                //     finel_price
-                                // );
+                                sendOrderConfirmation(
+                                    clientInfo.first_name,
+                                    clientInfo.email,
+                                    orderdMeals.map((meal) => `${meal.qt} x ${meal.name}`).join(", "),
+                                    finel_price
+                                );
                                 navigate("/");
                             }
                         })
