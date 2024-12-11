@@ -46,7 +46,7 @@ function SignUp() {
       setMessage("Password must be at least 8 characters long and contain at least one number.");
       return;
     }
-    const url = "https://riadsaveurs.atwebpages.com/index.php?action=signUp";
+    const url = "https://www.riadsaveurs.site/index.php?action=signUp";
     let fdata = new FormData();
     fdata.append('username', username);
     fdata.append('email', email);

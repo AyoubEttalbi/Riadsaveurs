@@ -84,7 +84,7 @@ export default function Payment() {
 
                 setTimeout(() => {
                     const reserve_info = JSON.parse(localStorage.getItem('reserve_info'));
-                    const url = "https://riadsaveurs.atwebpages.com/index.php?action=reserve";
+                    const url = "https://www.riadsaveurs.site/index.php?action=reserve";
                     let fdata = new FormData();
                     fdata.append('guests', reserve_info.guests);
                     fdata.append('date', reserve_info.date);

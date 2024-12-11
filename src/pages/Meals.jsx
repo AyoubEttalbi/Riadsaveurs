@@ -76,7 +76,7 @@ export default function Meals() {
   useEffect(() => {
     const fetchMeals = async () => {
       try {
-        const response = await fetch("https://riadsaveurs.atwebpages.com/index.php?action=meals");
+        const response = await fetch("https://www.riadsaveurs.site/index.php?action=meals");
         const data = await response.json();
         setMeals(data.meals || []);
       } catch (error) {

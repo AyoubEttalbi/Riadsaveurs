@@ -11,7 +11,7 @@ const TableUpdate = () => {
     const fetchTables = async () => {
       try {
         const response = await axios.get(
-          "https://riadsaveurs.atwebpages.com/index.php?action=tables"
+          "https://www.riadsaveurs.site/index.php?action=tables"
         );
         setTables(response.data); // Assuming the response has 'tables'
       } catch (error) {
@@ -25,7 +25,7 @@ const TableUpdate = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://riadsaveurs.atwebpages.com/index.php?action=updateTables",
+        "https://www.riadsaveurs.site/index.php?action=updateTables",
         {
           table_id: selectedTableId,
           reserved: reserved ? 1 : 0,
