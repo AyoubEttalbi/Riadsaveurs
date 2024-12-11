@@ -17,7 +17,6 @@ const ReservationStats = () => {
         setStats(response.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching reservation stats:', error);
         setLoading(false);
       }
     };

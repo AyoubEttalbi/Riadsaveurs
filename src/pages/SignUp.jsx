@@ -60,7 +60,6 @@ function SignUp() {
     })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.status === "success") {
         setMessage("Success: " + data.message);
         navigate("/login");
@@ -69,7 +68,6 @@ function SignUp() {
       }
     })
     .catch((error) => {
-      console.log(error);
       setMessage("Error: Unable to complete sign-up.");
     });
   };

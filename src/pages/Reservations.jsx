@@ -52,9 +52,7 @@ function Reservations() {
             }
         })
             .then((response) => {
-                console.log(response.data); // Check the structure of the response
                 if (response.data.status === "success") {
-                    console.log(response);
                     setTables(response.data.tables); // Populate tables with the available data
                     setError("");
                     setBackToForm(true);
@@ -64,7 +62,6 @@ function Reservations() {
                 }
             })
             .catch((error) => {
-                console.error("Error in request:", error);
                 setError("Failed to make the reservation. Please try again.");
             });
 
@@ -163,8 +160,8 @@ function Reservations() {
                                 >
                                     Proceed to Meals
                                 </button>
-                            </>
-                        ) : (
+                        </>
+                ) : (
                             <>
                                 <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Reserve a Table</h1>
                                 <form onSubmit={handleSubmit} className="space-y-6 w-full">

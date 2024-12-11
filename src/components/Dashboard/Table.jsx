@@ -12,7 +12,6 @@ const ReservationsTable = () => {
         setReservations(response.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching reservations:', error);
         setLoading(false);
       }
     };

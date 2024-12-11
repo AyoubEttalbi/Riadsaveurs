@@ -22,7 +22,6 @@ function Login() {
 
     axios.post(url, fdata)
       .then((response) => {
-        console.log("Response data:", response.data);
         if (response.data && response.data.status === "success") {
           setMessage("Success: " + response.data.message);
           // Redirect to another page after successful login
@@ -33,13 +32,11 @@ function Login() {
 
           }
           localStorage.setItem('userInfo', JSON.stringify({ username: username, password: password, remember: remember }));
-          console.log(localStorage.getItem('userInfo'));
         } else {
           setMessage("Error: " + response.data.message);
         }
       })
       .catch((error) => {
-        console.error("Error in request:", error);
         setMessage("An error occurred. Please try again.");
       });
   };
@@ -50,7 +47,6 @@ function Login() {
       setUsername(userInfo.username);
       setPassword(userInfo.password);
       setRemember(userInfo.remember);
-      console.log(remember);
     }
   }, [])
   return (

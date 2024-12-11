@@ -33,14 +33,12 @@ export default function Meals() {
   };
 
   const handleAddToCart = (meal) => {
-    console.log("The meal", meal);
     const preparationTime = meal.preparation_time || "0 m";
     const currentTime = new Date();
     const preparationTimeInMinutes = Prep_timeToMinutes(preparationTime);
 
     const reservationDateTime = new Date(`${reserveInfo.date}T${reserveInfo.time}`);
     const simalareMeal = orderdMeals.find((item) => item.meal_id === meal.meal_id);
-    console.log("the simalare meal",simalareMeal);
     if (reservationDateTime - currentTime < preparationTimeInMinutes * 60 * 1000) {
       setInvalidMeal({ name: meal.name, preparationTime: preparationTime });
       setValidPreparationTime(false);
@@ -48,11 +46,8 @@ export default function Meals() {
     } else {
       if (simalareMeal) {
         simalareMeal.qt = parseInt(meal.qt) + parseInt(simalareMeal.qt);
-        console.log("after", simalareMeal);
         const newListe = orderdMeals.filter((item) => item.meal_id !== meal.meal_id);
-        console.log("orders", orderdMeals);
         setOrderedMeals([...newListe, simalareMeal]);
-        console.log("orders", orderdMeals);
       }else{
         setOrderedMeals([...orderdMeals, meal]);
       }
@@ -80,7 +75,6 @@ export default function Meals() {
         const data = await response.json();
         setMeals(data.meals || []);
       } catch (error) {
-        console.error("Error fetching meals:", error);
       }
     };
     fetchMeals();

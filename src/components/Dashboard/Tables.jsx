@@ -33,7 +33,6 @@ const TableUpdate = () => {
       );
 
       // Log the response for debugging
-      console.log("Response Data:", response.data);
 
       // Handle the response appropriately
       if (response.data.message) {

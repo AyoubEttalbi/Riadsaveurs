@@ -13,7 +13,6 @@ const MealAvailabilityUpdate = () => {
         const response = await axios.get('https://www.riadsaveurs.site/index.php?action=fetchmeals');
         setMeals(response.data); // Set all meals regardless of availability
       } catch (error) {
-        console.error('Error fetching meals:', error);
       }
     };
     fetchMeals();
@@ -28,7 +27,6 @@ const MealAvailabilityUpdate = () => {
       });
 
       // Log the response for debugging
-      console.log('Response Data:', response.data);
 
       // Handle the response appropriately
       if (response.data.message) {
@@ -39,7 +37,6 @@ const MealAvailabilityUpdate = () => {
         alert('Unexpected response from the server');
       }
     } catch (error) {
-      console.error('Error updating meal availability:', error);
       alert('Error updating meal availability.');
     }
   };

@@ -31,7 +31,6 @@ export default function Payment() {
                 
             },
             error: (error) => {
-                console.error("Error reading CSV:", error);
             },
         });
     }, []);
@@ -51,19 +50,11 @@ export default function Payment() {
                 templateParams,
                 "fMHjqUSy_ixME3rTP" 
             )
-            .then(
-                (response) => {
-                    console.log("Email sent successfully!", response.status, response.text);
-                },
-                (error) => {
-                    console.error("Failed to send email:", error);
-                }
-            );
+            
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Payment Info:', { fullName, cardNumber, cardExpiration, cvv });
 
         if (data.length > 0) {
             let isValid = false;
@@ -100,13 +91,10 @@ export default function Payment() {
                         },
                     })
                         .then((response) => {
-                            console.log(response.data);
                             if (response.data.status === "success") {
-                                console.log("Payment successful!");
                                 setsuccess("Payment successful!");
                                 seterrormsg("")
                                 const clientInfo = response.data.data;
-                                console.log(clientInfo);
 
                                 // sendOrderConfirmation(
                                 //     clientInfo.first_name,
@@ -117,16 +105,12 @@ export default function Payment() {
                                 navigate("/");
                             }
                         })
-                        .catch((error) => {
-                            console.error("Error in request:", error);
-                           
-                        });
+                        
 
                     setShowLoading(false);
                     setShowThankYouMessage(true);
                 }, 3000);
             } else {
-                console.log('Invalid payment information.');
                 seterrormsg('Invalid payment information.');
                 setsuccess("")
             }
